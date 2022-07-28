@@ -12,16 +12,18 @@ function randomColor(min, max) {
 }
 
 function changeColor() {
-  value.style.color = main.style.backgroundColor;
-  title.style.color = main.style.backgroundColor;
-  value.textContent = main.style.backgroundColor;
-  backgroundText.style.color = main.style.backgroundColor;
+  let color = `rgb(${randomColor(0, 255)},${randomColor(0, 255)}, ${randomColor(
+    0,
+    255
+  )})`;
+  main.style.backgroundColor = color;
+  value.style.color = color;
+  title.style.color = color;
+  value.textContent = color;
+  backgroundText.style.color = color;
+  btn.style.backgroundColor = color;
 }
 
 btn.addEventListener("click", function () {
-  main.style.backgroundColor = `rgb(${randomColor(0, 255)},${randomColor(
-    0,
-    255
-  )}, ${randomColor(0, 255)})`;
   changeColor();
 });
